@@ -9,7 +9,7 @@ module Slacker
     end
 
     def respond (text, user_name, channel_name, timestamp)
-      'I am here!'
+      'Je suis là'
     end
 
     Bot.register(Ping)

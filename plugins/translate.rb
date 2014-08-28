@@ -18,12 +18,12 @@ module Slacker
       "cs" => "Czech",
       "da" => "Danish",
       "nl" => "Dutch",
-      "en" => "English",
+      "en" => "Anglais",
       "eo" => "Esperanto",
       "et" => "Estonian",
       "tl" => "Filipino",
       "fi" => "Finnish",
-      "fr" => "French",
+      "fr" => "Français",
       "gl" => "Galician",
       "ka" => "Georgian",
       "de" => "German",
@@ -75,7 +75,7 @@ module Slacker
 
     def pattern
       choices = @@languages.flatten.join '|'
-      /translate\s('|")(.+)('|")\sfrom\s(#{choices})\sto\s(#{choices})/i
+      /traduits\s('|")(.+)('|")\sdu\s(#{choices})\sau\s(#{choices})/i
     end
 
     def respond (text, user_name, channel_name, timestamp)
@@ -93,7 +93,7 @@ module Slacker
       end
 
       if (source.nil? or target.nil?)
-        return 'I can\'t translate that! The specified languages cannot be found. :('
+        return 'Je ne connais pas ce langage !'
       else
         ToLang.start(ENV['SLACKER_TRANSLATE_API_KEY'])
 
@@ -101,9 +101,9 @@ module Slacker
           to_translate = matches.captures[1]
           translated = to_translate.translate(target, :from => source)
 
-          '\'' << to_translate << '\' means \'' << translated << '\' in ' << @@languages[target]
+          '\'' << to_translate << '\' signifie \'' << translated << '\' en ' << @@languages[target]
         rescue RuntimeError => e
-          'Uh-oh! I can\'t translate anymore today :('
+          'Change ta TRANSLATE_API_KEY mofo !'
         end
       end
     end

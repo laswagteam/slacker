@@ -18,9 +18,9 @@ module Slacker
 
       if images.any?
         image = images.first
-        'Here\'s an image of \'' << query << "': " << image.uri
+        'Voici \'' << query << "': " << image.uri
       else
-        'I couldn\'t find an image of ' << query << ' :('
+        'Je n\'ai pas trouvé \'' << query << '\' :('
       end
     end
 

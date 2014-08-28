@@ -8,7 +8,8 @@ module Slacker
       'All done!',
       'Easy-peasy!',
       'Here it is:',
-      'No problem!'
+      'No problem!',
+      'Et voilà !'
     ]
 
     def help

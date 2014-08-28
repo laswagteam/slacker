@@ -5,12 +5,12 @@ module Slacker
     end
 
     def pattern
-      /roll\s(a|some)\sdice/
+      /lance\sun\sdé/
     end
 
     def respond (text, user_name, channel_name, timestamp)
       result = rand(6) + 1
-      return "I rolled a six-sided dice and got... #{result}!"
+      return "J'ai obtenu un #{result}!"
     end
 
     Bot.register(DiceRoll)

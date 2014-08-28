@@ -10,7 +10,7 @@ module Slacker
 
     def respond (text, user_name, channel_name, timestamp)
       heads = [true, false].sample
-      return 'I get... ' << (heads ? 'heads' : 'tails') << '!'
+      return (heads ? 'face' : 'pile') << ' !'
     end
 
     Bot.register(CoinFlip)
