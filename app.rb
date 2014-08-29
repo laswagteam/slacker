@@ -45,7 +45,7 @@ module Slacker
             if plugin.pattern =~ needs_help_with
               response << plugin.help unless plugin.help.nil?
             end
-          elsif plugin.pattern =~ text
+          elsif /slacker\s+#{plugin.pattern}/ =~ text
             r = plugin.respond(text, user_name, channel_name, timestamp)
             response << r unless r.nil?
           end
