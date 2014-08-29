@@ -15,7 +15,7 @@ module Slacker
       images = Google::Search::Image.new(query: query)
 
       if images.any?
-        "Voici #{query} : #{images.first}"
+        "Voici #{query} : #{images.first.uri}"
       else
         "Je n'ai pas trouvé #{query} :("
       end
