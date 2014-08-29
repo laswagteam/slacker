@@ -12,7 +12,7 @@ module Slacker
       /bpi/
     end
 
-    def respond
+    def respond(text, user_name, channel_name,timestamp)
       url = 'http://api.coindesk.com/v1/bpi/currentprice.json'
       resp = Net::HTTP.get_response(URI.parse(url))
 
