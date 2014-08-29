@@ -34,6 +34,7 @@ module Slacker
 
       def handle(text, user_name, channel_name, timestamp)
         response = Array.new
+        return response if user_name == 'Slacker'
 
         @@plugins.each do |plugin|
           if /slacker\s(help|man)/ =~ text
