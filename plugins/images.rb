@@ -7,20 +7,17 @@ module Slacker
     end
 
     def pattern
-      /image(\s?me)?/
+      /image\sme\s(.*)/i
     end
 
     def respond (text, user_name, channel_name, timestamp)
-      address = pattern.match(text)
-      query = text[address.end(0)+1..text.length()]
-
-      images = Google::Search::Image.new(:query => query)
+      query  = pattern.match(text).captures[0]
+      images = Google::Search::Image.new(query: query)
 
       if images.any?
-        image = images.first
-        'Voici \'' << query << "': " << image.uri
+        "Voici #{query} : #{images.first}"
       else
-        'Je n\'ai pas trouvé \'' << query << '\' :('
+        "Je n'ai pas trouvé #{query} :("
       end
     end
 

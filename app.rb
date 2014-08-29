@@ -1,14 +1,15 @@
 require 'rubygems'
 require 'sinatra'
 require 'json'
+require 'haml'
 
 post '/' do
   content_type :json
 
-  text = params[:text]
-  user_name = params[:user_name]
+  text         = params[:text]
+  user_name    = params[:user_name]
   channel_name = params[:channel_name]
-  timestamp = params[:timestamp]
+  timestamp    = params[:timestamp]
 
   response = Slacker::Bot.handle(text, user_name, channel_name, timestamp)
   JSON.generate({text: response.join("\n")}) if response
