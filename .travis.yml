@@ -1,0 +1,9 @@
+script:
+    - true
+deploy:
+  provider: heroku
+  api_key:
+    secure: lbLBphYETVE00vjU0Z7XisdJXwiCaUV882HeZYTAGPiugMQrThhQ0VvoxclYe0TGHmqEjmkw4xd7M2/TI1CNby1P1A/7osMzFSviOx4jckG0mgNuBY1iufW1Cam4dg6HGlcTNvSWh1gdkR5KG9fbACHHs5KobdTWwpgpTPSqfwE=
+  app: laswagteam
+  on:
+    repo: laswagteam/slacker
