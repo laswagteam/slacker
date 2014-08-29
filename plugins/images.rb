@@ -1,5 +1,4 @@
-require 'google-search'
-
+# encoding: UTF-8
 module Slacker
   class Images < Plugin
     def help

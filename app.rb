@@ -1,9 +1,12 @@
 require 'rubygems'
-require 'sinatra'
-require 'json'
-require 'haml'
+require 'bundler/setup'
+require 'net/http'
+require 'uri'
+
+Bundler.require(:default)
 
 post '/' do
+
   content_type :json
 
   text         = params[:text]

@@ -1,5 +1,3 @@
-require 'google-search'
-
 module Slacker
   class GoogleMe < Plugin
 

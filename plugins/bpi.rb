@@ -1,6 +1,3 @@
-require 'net/http'
-require 'json'
-
 module Slacker
 
   class BPI< Plugin

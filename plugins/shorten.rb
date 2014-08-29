@@ -1,6 +1,4 @@
-require 'uri'
-require 'googl'
-
+# encoding: UTF-8
 module Slacker
   class Shorten < Plugin
 

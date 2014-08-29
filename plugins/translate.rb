@@ -1,5 +1,4 @@
-require 'to_lang'
-
+# encoding: UTF-8
 module Slacker
   class Translate < Plugin
     @@languages  = {
@@ -91,7 +90,6 @@ module Slacker
       if @@languages[target].nil?
         target = @@languages.key(target.downcase.capitalize)
       end
-
       if (source.nil? or target.nil?)
         return 'Je ne connais pas ce langage !'
       else
@@ -103,11 +101,11 @@ module Slacker
 
           '\'' << to_translate << '\' signifie \'' << translated << '\' en ' << @@languages[target]
         rescue RuntimeError => e
-          'Change ta TRANSLATE_API_KEY mofo !'
+          'You needs $$$ sir'
         end
       end
     end
 
-    Bot.register(Translate)
+    #Bot.register(Translate)
   end
 end

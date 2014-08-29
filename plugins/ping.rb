@@ -1,3 +1,4 @@
+# encoding: UTF-8
 module Slacker
   class Ping < Plugin
     def help
